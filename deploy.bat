@@ -6,7 +6,7 @@ SET home_dir=C:\cygwin64\home\Roby\
 
 ECHO bin directory: %bin_dir%
 ECHO home directory: %home_dir%
-
+ECHO:
 
 IF "%1" == "" GOTO deploy
 IF "%1" == "deploy" GOTO deploy
@@ -18,13 +18,16 @@ GOTO end
 :deploy
 ECHO Deploying...
 COPY /-Y bin %bin_dir%bin
+ECHO:
 COPY /-Y .bashrc %home_dir%
 GOTO end
 
 :backup
 ECHO Backing up...
 COPY /-Y %bin_dir%bin bin
+ECHO:
 COPY /-Y %home_dir%.bashrc .bashrc
 
 :end
+ECHO:
 ECHO Finished.
