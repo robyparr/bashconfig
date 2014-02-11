@@ -1,4 +1,4 @@
 bashconfig
 ==========
 
-My BASH config files for my Cygwin installations on Windows machines.
+My Bash configuration files for my Cygwin installations on Windows machines.
