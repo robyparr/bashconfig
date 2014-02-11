@@ -9,7 +9,7 @@ export GREP_OPTIONS="--color=auto"
 
 # Aliases
 alias ls="ls -aF --color=always"
-
+alias gsl="git log --oneline" #gsl=GitShortLog
 # Cygwin fixes
 #ln -s /cygdrive/c /c
 cd ~
