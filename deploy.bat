@@ -17,7 +17,7 @@ GOTO end
 
 :deploy
 ECHO Deploying...
-COPY /-Y bin %bin_dir%
+COPY /-Y bin %bin_dir%bin
 COPY /-Y .bashrc %home_dir%
 GOTO end
 
