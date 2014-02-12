@@ -7,7 +7,7 @@ export cyghome="/home/$USER"
 export cygbin="/usr/local/bin"
 
 # Command Settings
-export GREP_OPTIONS="--color=auto"
+export GREP_OPTIONS="--color=always"
 
 # Aliases
 alias ls="ls -aF --color=always"
