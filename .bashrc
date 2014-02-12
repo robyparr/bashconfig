@@ -12,6 +12,7 @@ export GREP_OPTIONS="--color=always"
 # Aliases
 alias ls="ls -aF --color=always"
 alias gsl="git log --oneline" #gsl=GitShortLog
+alias less="less -R"
 
 # Change to the new home directory
 cd ~
