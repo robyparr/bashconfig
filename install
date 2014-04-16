@@ -7,7 +7,7 @@ symlink_bashrc="/c/Users/$USER/Documents/Projects/bashconfig/.bashrc"
 symlink_bashrc_dest="/home/$USER/.bashrc"
 
 symlink_bin="/c/Users/$USER/Documents/Projects/bashconfig/bin"
-symlink_bin_dest="/usr/local/bin"
+symlink_bin_dest="/usr/local"
 
 if [ "$1" == "" -o "$1" == "install" -o "$1" == "-i" ]; then
 	if ! [ -h $symlink_c_dest ]; then
@@ -25,6 +25,13 @@ if [ "$1" == "" -o "$1" == "install" -o "$1" == "-i" ]; then
 	fi
 
 	if ! [ -h $symlink_bin_dest ]; then
+        if [ -d $symlink_bin_dest/bin ]; then 
+            current_date=$(date +"%m_%d_%Y_%H_%M_%S")
+            backup_dir=$symlink_bin_dest/bin_backup_$current_date
+            mv -rf $symlink_bin_dest/bin $backup_dir
+            echo "Old bin directory backed up to $backup_dir."
+        fi
+
 		ln -s $symlink_bin $symlink_bin_dest
 		echo "Symlink created from $symlink_bin to $symlink_bin_dest."
 	else
@@ -32,7 +39,7 @@ if [ "$1" == "" -o "$1" == "install" -o "$1" == "-i" ]; then
 	fi
 
 elif [ "$1" == "uninstall" -o "$1" == "-u" ]; then
-	unlink $symlink_bin_dest
+	unlink $symlink_bin_dest/bin
 	unlink $symlink_bashrc_dest
 	unlink $symlink_c_dest
 	echo "Symbolic links removed."
