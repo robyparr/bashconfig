@@ -28,7 +28,7 @@ if [ "$1" == "" -o "$1" == "install" -o "$1" == "-i" ]; then
         if [ -d $symlink_bin_dest/bin ]; then 
             current_date=$(date +"%m_%d_%Y_%H_%M_%S")
             backup_dir=$symlink_bin_dest/bin_backup_$current_date
-            mv -rf $symlink_bin_dest/bin $backup_dir
+            mv -f $symlink_bin_dest/bin $backup_dir
             echo "Old bin directory backed up to $backup_dir."
         fi
 
